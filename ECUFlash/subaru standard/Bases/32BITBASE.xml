@@ -3770,6 +3770,18 @@
 		<table name="Engine Speed" type="Y Axis" elements="18" scaling="RPM"/>
 	</table>
 
+	<table name="Base Timing Primary Non-Cruise B" category="Ignition Timing - Advance" type="3D" level="4" scaling="BaseIgnitionTiming(degreesBTDC)1">
+		<description>This is the base level of timing during non-cruise conditions. Cruise and non-cruise conditions are determined by a number of factors including engine speed, requested torque, MAF, vehicle speed, IAT, idle mode, ECT, and SI-Drive mode (if applicable). The ECU will ramp between the cruise and non-cruise map values when conditions dictate the switch. The actual base timing is also determined by the 'Base Timing Reference Non-Cruise (AVCS related)' table. During a period after initial start (related to AVCS warm-up and other factors), the ECU will calculate Base Timing as primary - min0(primary - reference), with min0 being a function limiting the (primary - reference) result to zero. If you do not want the base timing to follow this behavior, set the primary and reference maps to the same values (separated by cruise/non-cruise).Total timing = base timing + knock correction advance + other timing compensations. Knock correction advance = (knock correction advance max map value * current advance multiplier) + feedback knock correction + fine knock correction.</description>
+		<table name="Engine Load" type="X Axis" elements="15" scaling="g/rev"/>
+		<table name="Engine Speed" type="Y Axis" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="Base Timing Reference Non-Cruise (AVCS related) B" category="Ignition Timing - Advance" type="3D" level="4" scaling="BaseIgnitionTiming(degreesBTDC)1">
+		<description>This is the base level of reference timing during non-cruise conditions. Cruise and non-cruise conditions are determined by a number of factors including engine speed, requested torque, MAF, vehicle speed, IAT, idle mode, ECT, and SI-Drive mode (if applicable). The ECU will ramp between the cruise and non-cruise map values when conditions dictate the switch. The actual base timing is determined as follows: during a period after initial start (related to AVCS warm-up and other factors), the ECU will calculate Base Timing as primary - min0(primary - reference), with min0 being a function limiting the (primary - reference) result to zero. If you do not want the base timing to follow this behavior, set the primary and reference maps to the same values (separated by cruise/non-cruise). Total timing = base timing + knock correction advance + other timing compensations. Knock correction advance = (knock correction advance max map value * current advance multiplier) + feedback knock correction + fine knock correction.</description>
+		<table name="Engine Load" type="X Axis" elements="15" scaling="g/rev"/>
+		<table name="Engine Speed" type="Y Axis" elements="18" scaling="RPM"/>
+	</table>
+
 	<table name="Base Timing Idle" category="Ignition Timing - Advance" type="2D" level="2" scaling="BaseIgnitionTiming(degreesBTDC)1">
 		<description>This is the base timing in idle mode. The 'Base Timing Idle Minimum' value will also be applied if the vehicle speed threshold is met.</description>
 		<table name="Coolant Temperature" type="Y Axis" elements="16" scaling="DegreesF"/>
@@ -5426,6 +5438,10 @@
 		<description>PASS CODE (NO DTC DETECTED). To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
+	<table name="(P0000) PASS CODE (NO DTC DETECTED)_" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>PASS CODE (NO DTC DETECTED). To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
 	<table name="(P000A) A CAMSHAFT POSITION SLOW RESPONSE (BANK 1)" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>CAMSHAFT POSITION A  TIMING SLOW RESPONSE BANK 1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
@@ -5677,8 +5693,16 @@
 	<table name="(P013A) OXYGEN SENSOR SLOW RESPONSE RICH TO LEAN BANK 1 SENSOR 2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>OXYGEN SENSOR SLOW RESPONSE  RICH TO LEAN BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
+	
+	<table name="(P013A) O2 SENSOR SLOW RESPONSE RICH TO LEAN B1 S2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>OXYGEN SENSOR SLOW RESPONSE  RICH TO LEAN BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
 
 	<table name="(P013B) O2 SENSOR SLOW RESPONSE LEAN TO RICH BANK 1 SENSOR 2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>O2 SENSOR SLOW RESPONSE  LEAN TO RICH BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+	
+	<table name="(P013B) O2 SENSOR SLOW RESPONSE LEAN TO RICH B1 S2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>O2 SENSOR SLOW RESPONSE  LEAN TO RICH BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
@@ -5686,7 +5710,15 @@
 		<description>O2 SENSOR DELAYED RESPONSE  RICH TO LEAN BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
+	<table name="(P013E) O2 SENSOR DELAYED RESPONSE RICH TO LEAN B1 S2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>O2 SENSOR DELAYED RESPONSE  RICH TO LEAN BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
 	<table name="(P013F) O2 SENSOR DELAYED RESPONSE LEAN TO RICH BANK 1 SENSOR 2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>O2 SENSOR DELAYED RESPONSE  LEAN TO RICH BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P013F) O2 SENSOR DELAYED RESPONSE LEAN TO RICH B1 S2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>O2 SENSOR DELAYED RESPONSE  LEAN TO RICH BANK 1 SENSOR 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
@@ -5753,6 +5785,10 @@
 	<table name="(P015B) O2 SENSOR DELAYED RESPONSE RICH TO LEAN B1 S1" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>O2 SENSOR DELAYED RESPONSE RICH TO LEAN B1 S1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
+	
+	<table name="(P015B) O2 SENSOR DELAYED RESPONSE LEAN TO RICH B1 S1" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>O2 SENSOR DELAYED RESPONSE RICH TO LEAN B1 S1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
 
 	<table name="(P0160) O2 SENSOR NO ACTIVITY B2 S2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>O2 CIRCUIT NO ACTIVITY DETECTED (BANK 2, SENSOR 2). To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
@@ -5814,16 +5850,32 @@
 		<description>INJECTOR CIRCUIT OPEN  CYLINDER 1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
+	<table name="(P0201) INJECTOR CIRCUIT MALFUNCTION CYLINDER 1" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>INJECTOR CIRCUIT OPEN  CYLINDER 1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
 	<table name="(P0202) INJECTOR CIRCUIT OPEN  CYLINDER 2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>INJECTOR CIRCUIT OPEN  CYLINDER 2. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P0202) INJECTOR CIRCUIT MALFUNCTION CYLINDER 2" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>INJECTOR CIRCUIT OPEN  CYLINDER 1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
 	<table name="(P0203) INJECTOR CIRCUIT OPEN  CYLINDER 3" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>INJECTOR CIRCUIT OPEN  CYLINDER 3. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
+	<table name="(P0203) INJECTOR CIRCUIT MALFUNCTION CYLINDER 3" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>INJECTOR CIRCUIT OPEN  CYLINDER 1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
 	<table name="(P0204) INJECTOR CIRCUIT OPEN  CYLINDER 4" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>INJECTOR CIRCUIT OPEN  CYLINDER 4. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P0204) INJECTOR CIRCUIT MALFUNCTION CYLINDER 4" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>INJECTOR CIRCUIT OPEN  CYLINDER 1. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
 	<table name="(P0222) TPS B LOW INPUT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
@@ -5946,19 +5998,35 @@
 		<description>IGNITION COIL PRIMARY/SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
-	<table name="(P0351) IGNITION COIL A PRIMARY  SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+	<table name="(P0351) IGNITION COIL A PRIMARY/SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>IGNITION COIL A PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
-	<table name="(P0352) IGNITION COIL B PRIMARY  SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+	<table name="(P0352) IGNITION COIL B PRIMARY/SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>IGNITION COIL B PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
-	<table name="(P0353) IGNITION COIL C PRIMARY  SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+	<table name="(P0353) IGNITION COIL C PRIMARY/SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>IGNITION COIL C PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
-	<table name="(P0354) IGNITION COIL D PRIMARY  SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+	<table name="(P0354) IGNITION COIL D PRIMARY/SECONDARY CIRCUIT" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>IGNITION COIL D PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P0351) IGNITION COIL A PRIMARY/SECONDARY CIRCUIT MALFUNCTION" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>IGNITION COIL A PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P0352) IGNITION COIL B PRIMARY/SECONDARY CIRCUIT MALFUNCTION" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>IGNITION COIL B PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P0353) IGNITION COIL C PRIMARY/SECONDARY CIRCUIT MALFUNCTION" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>IGNITION COIL C PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P0354) IGNITION COIL D PRIMARY/SECONDARY CIRCUIT MALFUNCTION" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>IGNITION COIL D PRIMARY  SECONDARY CIRCUIT. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
@@ -6830,6 +6898,10 @@
 		<description>EVAP LEAK DETECTION PUMP SENSE CIRCUIT RANGE PERF. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 
+	<table name="(P2404) EVAP LEAK DETECTION PUMP SENSE CIRCUIT RANGE/PERF" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>EVAP LEAK DETECTION PUMP SENSE CIRCUIT RANGE PERF. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
 	<table name="(P2419) EVAP SWITCHING VALVE LOW" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>EVAPORATIVE EMISSION SYSTEM SWITCHING VALVE CONTROL CIRCUIT LOW. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
@@ -6879,6 +6951,10 @@
 	</table>
 
 	<table name="(P2610) ECM PCM INTERNAL ENGINE OFF TIMER PERFORMANCE" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
+		<description>ECM PCM INTERNAL ENGINE OFF TIMER PERFORMANCE. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
+	</table>
+
+	<table name="(P2610) ECM/PCM INTERNAL ENGINE OFF TIMER PERFORMANCE" category="Diagnostic Trouble Codes" type="1D" scaling="PXXXX enable">
 		<description>ECM PCM INTERNAL ENGINE OFF TIMER PERFORMANCE. To disable this DTC, make sure the box above is unchecked. Off-road use only.</description>
 	</table>
 

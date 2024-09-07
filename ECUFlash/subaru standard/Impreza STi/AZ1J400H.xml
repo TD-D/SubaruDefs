@@ -665,17 +665,32 @@
 		<table name="Engine Speed" address="d8d04"/>
 	</table>
 
-	<table name="Requested Torque (Accelerator Pedal) SI-DRIVE Sport" address="de068">
+	<table name="Requested Torque (Accelerator Pedal) SI-DRIVE Sport" address="dd8e8">
+		<table name="Accelerator Pedal Angle" address="dd868"/>
+		<table name="Engine Speed" address="dd8a4"/>
+	</table>
+
+	<table name="Requested Torque B (Accelerator Pedal) SI-DRIVE Sport" address="de068">
 		<table name="Accelerator Pedal Angle" address="ddfe8"/>
 		<table name="Engine Speed" address="de024"/>
 	</table>
 
-	<table name="Requested Torque (Accelerator Pedal) SI-DRIVE Sport Sharp" address="de2e8">
+	<table name="Requested Torque (Accelerator Pedal) SI-DRIVE Sport Sharp" address="ddb68">
+		<table name="Accelerator Pedal Angle" address="ddae8"/>
+		<table name="Engine Speed" address="ddb24"/>
+	</table>
+
+	<table name="Requested Torque B (Accelerator Pedal) SI-DRIVE Sport Sharp" address="de2e8">
 		<table name="Accelerator Pedal Angle" address="de268"/>
 		<table name="Engine Speed" address="de2a4"/>
 	</table>
 
-	<table name="Requested Torque (Accelerator Pedal) SI-DRIVE Intelligent" address="de568">
+	<table name="Requested Torque (Accelerator Pedal) SI-DRIVE Intelligent" address="ddde8">
+		<table name="Accelerator Pedal Angle" address="ddd68"/>
+		<table name="Engine Speed" address="ddda4"/>
+	</table>
+
+	<table name="Requested Torque B (Accelerator Pedal) SI-DRIVE Intelligent" address="de568">
 		<table name="Accelerator Pedal Angle" address="de4e8"/>
 		<table name="Engine Speed" address="de524"/>
 	</table>

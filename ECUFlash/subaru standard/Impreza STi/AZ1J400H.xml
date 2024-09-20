@@ -482,8 +482,8 @@
 		<table name="Coolant Temperature" address="cfb9c"/>
 	</table>
 
-	<table name="Base Timing Idle Minimum" address="cfdb6">
-		<table name="Engine Speed" address="cfb9c" elements="16"/>
+	<table name="Base Timing Idle Minimum" address="cfdad">
+		<table name="Engine Speed" address="cfc1c" elements="16"/>
 	</table>
 
 	<table name="Base Timing Idle Minimum Vehicle Speed Enable" address="cf730">
